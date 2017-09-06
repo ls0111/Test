@@ -13,6 +13,10 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
+/**
+ * 数据库表-->Excel表格
+ * @author Administrator
+ */
 public class Generator {
 	public static void generate(ResultSet rlts, String path) {
 		HSSFWorkbook wb = new HSSFWorkbook();
