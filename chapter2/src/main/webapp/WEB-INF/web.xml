@@ -1,7 +1,29 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>ifeweb</display-name>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<!-- 1.从类路径下加载Spring配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/smart-context.xml</param-value>
+	</context-param>
+
+	<!-- 2.负责启动Spring容器监听器，它将引用1位置配置的上下文参数活的Spring配置文件的地址 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 3.Spring MVC的主控servlet -->
+	<servlet>
+		<servlet-name>smart</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<!-- spring MVC处理的URL -->
+	<servlet-mapping>
+		<servlet-name>smart</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
 </web-app>
