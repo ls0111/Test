@@ -1,15 +1,12 @@
 package com.smart.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.stereotype.Repository;
 
-import com.smart.domain.User;
+import com.smart.domain.LoginLog;
 
 @Repository
 public class LoginLogDao {
@@ -28,24 +25,9 @@ public class LoginLogDao {
 		}
 		return list.size();
 	}
-
-	public User findUserByUserName(final String userName) {
-		final User user = new User();
-		jdbcTemplate.query("select * from t_user where user_name = ?", new Object[] { userName },
-				new RowCallbackHandler() {
-
-					public void processRow(ResultSet rs) throws SQLException {
-						user.setUserId(rs.getInt("user_id"));
-						user.setUserName(userName);
-						user.setCredits(rs.getInt("credits"));
-					}
-
-				});
-		return user;
-	}
-
-	public void updateLoginInfo(User user) {
-		jdbcTemplate.update("update t_user set last_visit=?,last_ip=?,credits=? where user_id=?", user.getLastVisit(),
-				user.getLastIp(), user.getCredits());
+	
+	public void insertLoginLog(LoginLog loginLog){
+		Object[] args = new Object[]{loginLog.getUserId(),loginLog.getIp(),loginLog.getLoginDate()};
+		jdbcTemplate.update("insert into t_login_log(user_id,ip,login_datetime) values (?,?,?)",args);
 	}
 }
