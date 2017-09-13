@@ -18,6 +18,8 @@
 		<jetty.version>6.1.25</jetty.version>
 		<aspectj.version>1.8.10</aspectj.version>
 		<junit.version>4.12</junit.version>
+		<jdk.version>1.8</jdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!-- 依赖的spring模块类库 -->
@@ -116,6 +118,17 @@
 					</connectors>
 					<contextPath>/bbs</contextPath>
 					<scanIntervalSeconds>0</scanIntervalSeconds>
+				</configuration>
+			</plugin>
+			
+			<!-- 配置jdk版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
