@@ -1,7 +1,5 @@
-package poi.xls.service;
+package poi.xls.service.impl;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,18 +8,17 @@ import java.util.Set;
 
 import lys.myutil.StringUtil;
 import poi.xls.bean.BankConfig;
+import poi.xls.service.Poi2Beans;
 
 /**
  * @author 作者 louys:
  * @version 创建时间：2017年9月15日 上午10:09:44 类说明
  */
-public class Poi2BeansService {
-	private ExcelReader excelReader = new ExcelReader();
-
-	public List<BankConfig> trans2Bean(String file) throws FileNotFoundException {
+public class Poi2BeansBankConfig implements Poi2Beans<BankConfig>{
+	@Override
+	public List<BankConfig> trans2Bean(Map<Integer, String> data) {
 		List<BankConfig> list = new ArrayList<BankConfig>();
-		Map<Integer, String> map = excelReader.readExcelContent(new FileInputStream(file));
-		Set<Entry<Integer, String>> entries = map.entrySet();
+		Set<Entry<Integer, String>> entries = data.entrySet();
 		for (Entry<Integer, String> e : entries) {
 			String[] arr = StringUtil.replaceBlank(e.getValue()).split(",");
 			BankConfig bc = genBeans(arr);
@@ -53,18 +50,6 @@ public class Poi2BeansService {
 			}
 			bc.setBank_name(name);
 			bc.setBank_code(arr[arr.length-1].substring(0, 4));
-		}
-	}
-
-	public static void main(String[] args) {
-		Poi2BeansService poi = new Poi2BeansService();
-		String file = "C:\\Users\\Administrator\\Desktop\\mysql\\全国银行卡卡表(卡BIN).xls";
-		// String file =
-		// "C:\\Users\\Administrator\\Desktop\\mysql\\全国银行行号及中行联行号.xls";
-		try {
-			poi.trans2Bean(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		}
 	}
 }

@@ -3,6 +3,7 @@ package poi.xls.db.mybatis;
 import org.apache.ibatis.session.SqlSession;
 
 import poi.xls.bean.BankConfig;
+import poi.xls.bean.BranchBank;
 
 /**
 * @author 作者 louys:
@@ -13,8 +14,13 @@ public class MybatisDao {
 	public static final String NAME_SPACE_POIXLS = "PoiXls.";
 	private SqlSession session = MybatisSqlSession.getSqlSession();
 	
-	public Integer insert(BankConfig bc){
-		Integer result = session.insert("PoiXls.insert", bc);
+	public Integer insertBankConfig(BankConfig bc){
+		Integer result = session.insert("PoiXls.insertBankConfig", bc);
+		return result;
+	}
+	
+	public Integer insertBranchBank(BranchBank bb){
+		Integer result = session.insert("PoiXls.insertBranchBank", bb);
 		return result;
 	}
 	
@@ -38,7 +44,7 @@ public class MybatisDao {
 		bc.setBank_bin_no("123");
 		bc.setBank_code("11");
 		bc.setBank_name("ssss");
-		int i = dao.insert(bc);
+		int i = dao.insertBankConfig(bc);
 		System.out.println(i);
 	}
 }

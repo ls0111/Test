@@ -8,12 +8,20 @@
     WHERE id = #{id}
   </select>
   
-  <!-- 插入用户表 -->
-  <insert id="insert" parameterType="BankConfig">
+  <!-- 插入银行配置表 -->
+  <insert id="insertBankConfig" parameterType="BankConfig">
     INSERT INTO hoyi_bank_config
       (bank_code,bank_name,bank_bin_no,card_type,need_branch_bank)
     VALUES
       (#{bank_code},#{bank_name},#{bank_bin_no},#{card_type},#{need_branch_bank})
+  </insert>
+  
+  <!-- 插入支行信息表 -->
+  <insert id="insertBranchBank" parameterType="BranchBank">
+    INSERT INTO hoyi_branch_bank
+      (bank_name,bank_code,province,city,district)
+    VALUES
+      (#{bank_name},#{bank_code},#{province},#{city},#{district})
   </insert>
   
   <!-- 更新用户表 -->
