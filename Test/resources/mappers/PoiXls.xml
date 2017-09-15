@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PoiXls">
+
+  <select id="getBank" resultType="BankConfig">
+    SELECT *
+    FROM hoyi_bank_config
+    WHERE id = #{id}
+  </select>
+  
+  <!-- 插入用户表 -->
+  <insert id="insert" parameterType="BankConfig">
+    INSERT INTO hoyi_bank_config
+      (bank_code,bank_name,bank_bin_no,card_type,need_branch_bank)
+    VALUES
+      (#{bank_code},#{bank_name},#{bank_bin_no},#{card_type},#{need_branch_bank})
+  </insert>
+  
+  <!-- 更新用户表 -->
+  <update id="update">
+    UPDATE hoyi_user SET 
+      name = #{name},
+      type = #{type},
+      image = #{image},
+      status = #{status},
+      password = #{password},
+      shop_code = #{shopCode},
+      telephone = #{telephone},
+      update_time = #{updateTime}
+    WHERE id = #{id}
+  </update>
+  
+  <!-- 删除用户表 -->
+  <delete id="delete">
+    DELETE FROM hoyi_user
+    WHERE id = #{id}
+  </delete>
+  
+</mapper>

@@ -1,4 +1,4 @@
-package poi.generator.xls;
+package poi.xls.generator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -12,6 +12,8 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import poi.xls.db.DBUtils;
 
 /**
  * 数据库表-->Excel表格

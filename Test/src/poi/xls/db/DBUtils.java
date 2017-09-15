@@ -1,4 +1,4 @@
-package poi.generator.xls;
+package poi.xls.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,7 +37,7 @@ public class DBUtils {
 	 */
     public static Connection getConnection() {
     	Connection connection = null;
-    	String url = "jdbc:mysql://localhost:3306/jcrcb";
+    	String url = "jdbc:mysql://localhost:3306/jcrcb-1";
     	String username = "root";
     	String password = "1234";
         try {

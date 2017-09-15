@@ -1,6 +1,8 @@
-package poi.generator.xls;
+package poi.xls;
 
 import java.sql.ResultSet;
+
+import poi.xls.generator.Generator;
 
 public class TestGenerator {
 	public static void main(String[] args) {
