@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public final class DBUtils {
     // 参数定义
-    private static String url = "jdbc:mysql://localhost:3306/mybatis"; // 数据库地址
+    private static String url = "jdbc:mysql://localhost:3306/jcrcb-1"; // 数据库地址
     private static String username = "root"; // 数据库用户名
     private static String password = "1234"; // 数据库密码
 
