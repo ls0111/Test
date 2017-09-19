@@ -19,7 +19,7 @@ public class PoiGenTest {
 		Poi2BeansBranchBank poi = new Poi2BeansBranchBank();
 		MybatisDao dao = new MybatisDao();
 //		String file = "C:\\Users\\Administrator\\Desktop\\mysql\\全国银行卡卡表(卡BIN).xls";
-		 String file = "C:\\Users\\Administrator\\Desktop\\mysql\\全国银行行号及中行联行号2.xls";
+		String file = "C:\\Users\\Administrator\\Desktop\\mysql\\全国银行行号及中行联行号2.xls";
 		try {
 			Map<Integer,String> data = poi.excelReader.readExcelContent(new FileInputStream(file));
 			List<BranchBank> list = poi.trans2Bean(data);
