@@ -25,6 +25,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+		<!-- 3.spring 监控功能 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<scope>compile</scope>
+		</dependency>
 		<!-- mysql 驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>
