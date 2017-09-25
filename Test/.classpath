@@ -2,28 +2,15 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry kind="lib" path="E:/SVN/trunk/fox/web/WEB-INF/lib/commons-lang-2.4.jar"/>
-	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30.jar"/>
-	<classpathentry kind="lib" path="lib/javax.mail.jar"/>
-	<classpathentry kind="lib" path="lib/mybatis-3.4.4.jar"/>
 	<classpathentry kind="src" path="/VToBank"/>
 	<classpathentry kind="src" path="/ifpweb"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_121"/>
-	<classpathentry kind="lib" path="/WSGW/WebRoot/WEB-INF/lib/json-lib-2.2.3-jdk15.jar"/>
-	<classpathentry kind="lib" path="D:/Maven_Repository/maven_jar/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar" sourcepath="D:/Maven_Repository/maven_jar/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE-sources.jar">
-		<attributes>
-			<attribute name="maven.groupId" value="org.springframework"/>
-			<attribute name="maven.artifactId" value="spring-core"/>
-			<attribute name="maven.version" value="4.3.9.RELEASE"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.archivename" value="json-lib-2.4-jdk15.jar"/>
-			<attribute name="maven.groupId" value="net.sf.json-lib"/>
-			<attribute name="maven.artifactId" value="json-lib"/>
-			<attribute name="maven.version" value="2.4"/>
-			<attribute name="maven.classifier" value="jdk15"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.4.4.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

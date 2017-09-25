@@ -16,6 +16,27 @@ import org.springframework.core.io.WritableResource;
  */
 public class ManyWaysReadingResource {
 	public static void main(String[] args) {
+		String a = "B";
+		switch(a){
+			case "a": System.out.println(1);
+			break;
+			case "B": System.out.println(2);
+			break;
+			case "C": System.out.println(3);
+			break;
+		
+		}
+			
+	}
+	
+	public static void read(){
+		
+	}
+	
+	/**
+	 * 多种方式读取文件
+	 */
+	public static void readFile(){
 		try {
 			String filePath = "E:/GIT/Test/Test/resources/test/readme.txt";
 			// 1.使用系统文件路径加载文件
@@ -44,6 +65,5 @@ public class ManyWaysReadingResource {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }
