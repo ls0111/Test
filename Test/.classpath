@@ -13,10 +13,15 @@
 	<classpathentry kind="lib" path="/WSGW/WebRoot/WEB-INF/lib/json-lib-2.2.3-jdk15.jar"/>
 	<classpathentry kind="lib" path="D:/Maven_Repository/maven_jar/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar" sourcepath="D:/Maven_Repository/maven_jar/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE-sources.jar">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="org.springframework"/>
 			<attribute name="maven.artifactId" value="spring-core"/>
 			<attribute name="maven.version" value="4.3.9.RELEASE"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="json-lib-2.4-jdk15.jar"/>
+			<attribute name="maven.groupId" value="net.sf.json-lib"/>
+			<attribute name="maven.artifactId" value="json-lib"/>
+			<attribute name="maven.version" value="2.4"/>
+			<attribute name="maven.classifier" value="jdk15"/>
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
