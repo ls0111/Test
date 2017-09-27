@@ -9,8 +9,12 @@
 	<classpathentry kind="lib" path="lib/mybatis-3.4.4.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.30.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.14-20160307.jar"/>
-	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar" sourcepath="C:/Users/ADMINI~1/AppData/Local/Temp/decompiler/source/commons-lang-2.6-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-core-4.3.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/json-lib-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.8.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.8.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.8.jar" sourcepath="C:/Users/ADMINI~1/AppData/Local/Temp/decompiler/source/jackson-databind-2.8.8-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
