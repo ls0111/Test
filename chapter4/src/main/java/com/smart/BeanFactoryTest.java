@@ -19,7 +19,7 @@ public class BeanFactoryTest {
     }
     public void getBean() throws IOException {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource resource = resolver.getResource("classpath:beans.xml");
+        Resource resource = resolver.getResource("classpath:com/smart/beanfactory/beans.xml");
         System.out.println(resource.getURL());
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
