@@ -4,7 +4,11 @@
        xsi:schemaLocation="
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-        <bean id="car1" class="com.smart.Car">
+        <bean id="car" class="com.smart.Car" init-method="myInit" destroy-method="myDestroy">
+            <property name="brand" value="法拉利"/>
+            <property name="maxSpeed" value="220"/>
+        </bean>
+        <bean id="car1" class="com.smart.Car" init-method="myInit" destroy-method="myDestroy">
             <property name="brand" value="法拉利"/>
             <property name="color" value="black"/>
             <property name="maxSpeed" value="200"/>

@@ -19,16 +19,15 @@ public class BeanFactoryTest {
     }
     public void getBean() throws IOException {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource resource = resolver.getResource("classpath:com/smart/beanfactory/beans.xml");
+        Resource resource = resolver.getResource("classpath:beans.xml");
         System.out.println(resource.getURL());
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
         reader.loadBeanDefinitions(resource);
 
-        System.out.println("init beanfactory!");
-
+        System.out.println("1. init beanfactory!");
         Car car = factory.getBean("car1",Car.class);
-        System.out.println("car bean is ready for user!");
-        System.out.println(car);
+        System.out.println("10. car bean is ready for using!");
+        System.out.println(car.introduce());
     }
 }

@@ -11,35 +11,45 @@ import org.springframework.beans.factory.InitializingBean;
 public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
 	private String brand;
 	private String color;
-	private String maxSpeed;
+	private Integer maxSpeed;
 
 	private BeanFactory beanFactory;
 	private String beanName;
 
 	public Car(){
-		System.out.println("invoke Car() constructor!");
+		System.out.println("2. invoke Car() constructor!");
 	}
+	// DisposableBean接口方法
 	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-
+		System.out.println("invoke DisposableBean.destroy()");
 	}
 
 	// 4.InitializingBean接口方法
 	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-
+		System.out.println("8. invoke InitializingBean.afterPropertiesSet()");
 	}
 
 	// 3.BeanNameAware接口方法
-	public void setBeanName(String arg0) {
-		// TODO Auto-generated method stub
-
+	public void setBeanName(String beanName) {
+		System.out.println("6. invoke BeanNameAware.setBeanName()");
+		this.beanName=beanName;
 	}
 
 	// 2 BeanFactoryAware接口方法
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		// TODO Auto-generated method stub
-
+		System.out.println("7. invoke BeanFactoryAware.setBeanFactory()");
+		this.beanFactory=beanFactory;
+	}
+	
+	// 通过<bean>的init-method，调用初始化方法
+	public void myInit(){
+		System.out.println("9. invode init-method，set maxSpeed=240");
+		this.maxSpeed=240;
+	}
+	
+	// 通过<bean>的destroy-method，调用销毁方法
+	public void myDestroy(){
+		System.out.println("invode destroy-method");
 	}
 	
 	public String getBrand() {
@@ -47,7 +57,7 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
 	}
 	
 	public void setBrand(String brand) {
-		System.out.println("invoke setBrand(),set properties!");
+		System.out.println("3. invoke setBrand(),set properties!");
 		this.brand = brand;
 	}
 	
@@ -56,14 +66,16 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
 	}
 	
 	public void setColor(String color) {
+		System.out.println("4. setColor");
 		this.color = color;
 	}
 	
-	public String getMaxSpeed() {
+	public Integer getMaxSpeed() {
 		return maxSpeed;
 	}
 	
-	public void setMaxSpeed(String maxSpeed) {
+	public void setMaxSpeed(Integer maxSpeed) {
+		System.out.println("5. setspeed");
 		this.maxSpeed = maxSpeed;
 	}
 	
