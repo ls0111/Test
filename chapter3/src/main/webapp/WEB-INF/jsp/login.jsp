@@ -20,15 +20,15 @@
 	---------------------------------------------------------------------------------------------<br>
 	---------------------------------------------------------------------------------------------<br>
 	---------------------------------------------------------------------------------------------<br>
-	<form id="uploadForm" enctype="multipart/form-data" method="post">
+	<form id="uploadForm" action="${pageContext.request.contextPath}/upload/file" enctype="multipart/form-data" method="post">
 		上传用户：<input type="text" name="username"><br/> 
-		上传文件1：<input type="file" name="file1"><br/> 
-		上传文件2：<input type="file" name="file2"><br/> 
+		上传文件1：<input type="file" name="file"><br/> 
+		上传文件2：<input type="file" name="file"><br/> 
 		<input id="submit" type="submit" value="提交">
 	</form>
+	<button id="ajax">异步提交</button>
 	<script type="text/javascript">
-		$("#submit").click(function(){
-			alert("submit");
+		$("#ajax").click(function(){
 			var formData = new FormData($("#uploadForm")[0]);
 			$.ajax({
 				url:'${pageContext.request.contextPath}/upload/file',
