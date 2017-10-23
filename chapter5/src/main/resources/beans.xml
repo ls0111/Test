@@ -35,4 +35,32 @@
 		<constructor-arg index="0" value="louys"></constructor-arg>
 		<constructor-arg index="1" ref="car3"></constructor-arg>
 	</bean>
+	
+	<bean id="boss2" class="com.smart.bean.Boss">
+		<property name="favorites">
+			<map>
+				<entry>
+					<key><value>first</value></key>
+					<value>读书</value>
+				</entry>
+				<entry>
+					<key><value>second</value></key>
+					<value>看电影</value>
+				</entry>
+			</map>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="jobMail">jobMail@136.com</prop>
+				<prop key="lifeMail">lifeMail@136.com</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 非静态工厂方法创建bean -->
+	<bean id="carFactory" class="com.smart.factory.CarFactory"></bean>
+	<bean id="car5" factory-bean="carFactory" factory-method="createBugattiCar"></bean>
+	<!-- 静态工厂方法创建bean -->
+	<bean id="car6" class="com.smart.factory.CarFactory" factory-method="createVWCar"></bean>
+	
 </beans> 

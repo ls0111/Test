@@ -1,4 +1,8 @@
 package com.smart.bean;
+
+import java.util.Map;
+import java.util.Properties;
+
 /**
 * @author 作者 louys:
 * @version 创建时间：2017年10月18日 上午9:34:45
@@ -7,6 +11,12 @@ package com.smart.bean;
 public class Boss {
 	private String name;
 	private Car car;
+	private Map<String,String> favorites;
+	private Properties properties;
+	
+	public Boss(){
+		
+	}
 	
 	public Boss(String name,Car car){
 		this.name = name;
@@ -24,5 +34,22 @@ public class Boss {
 	}
 	public void setCar(Car car) {
 		this.car = car;
+	}
+	public Map<String, String> getFavorites() {
+		return favorites;
+	}
+	public void setFavorites(Map<String, String> favorites) {
+		this.favorites = favorites;
+	}
+	public Properties getProperties() {
+		return properties;
+	}
+	public void setProperties(Properties properties) {
+		this.properties = properties;
+	}
+
+	@Override
+	public String toString() {
+		return "Boss [name=" + name + ", car=" + car + ", favorites=" + favorites + ", properties=" + properties + "]";
 	}
 }
