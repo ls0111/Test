@@ -13,6 +13,7 @@ public class Boss {
 	private Car car;
 	private Map<String,String> favorites;
 	private Properties properties;
+	private Map<String,Integer> jobTime;
 	
 	public Boss(){
 		
@@ -46,6 +47,12 @@ public class Boss {
 	}
 	public void setProperties(Properties properties) {
 		this.properties = properties;
+	}
+	public Map<String, Integer> getJobTime() {
+		return jobTime;
+	}
+	public void setJobTime(Map<String, Integer> jobTime) {
+		this.jobTime = jobTime;
 	}
 
 	@Override

@@ -63,4 +63,12 @@
 	<!-- 静态工厂方法创建bean -->
 	<bean id="car6" class="com.smart.factory.CarFactory" factory-method="createVWCar"></bean>
 	
+	<!-- MagicBoss prototype类型的bean-->
+	<bean id="car" class="com.smart.injectfun.Car" scope="prototype">
+		<property name="brand">红旗</property>
+	</bean>
+	<!-- 实施方法注入 -->
+	<bean id="magicBoss" class="com.smart.injectfun.MagicBoss">
+		<lookup-method name="getCar" bean="car"/>
+	</bean>
 </beans> 
