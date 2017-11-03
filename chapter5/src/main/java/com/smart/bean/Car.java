@@ -5,7 +5,6 @@ package com.smart.bean;
 * 类说明
 */
 public class Car {
-	private Boss boss;
 	private String brand;
 	private String color;
 	private int maxSpeed;
@@ -14,21 +13,6 @@ public class Car {
 		
 	}
 	
-	public Car(String color){
-		this.color = color;
-	}
-	
-	public Car(Boss boss, String brand){
-		this.boss = boss;
-		this.brand = brand;
-	}
-	
-	public Boss getBoss() {
-		return boss;
-	}
-	public void setBoss(Boss boss) {
-		this.boss = boss;
-	}
 	public String getBrand() {
 		return brand;
 	}

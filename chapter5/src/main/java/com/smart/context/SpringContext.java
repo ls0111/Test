@@ -2,6 +2,8 @@ package com.smart.context;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -28,9 +30,12 @@ public class SpringContext {
 		// 加载bean资源到bean工厂
 		reader.loadBeanDefinitions(res);
 		
-		Car car = (Car) bf.getBean("car6");
-		System.out.println(car);
-		Boss boss = (Boss) bf.getBean("boss2");
+//		ApplicationContext ac=new ClassPathXmlApplicationContext("classpath:beans.xml");
+//		Car car = (Car) bf.getBean("car6");
+//		System.out.println(car);
+		Boss boss = (Boss) bf.getBean("boss3");
 		System.out.println(boss);
+//		Boss boss = (Boss) ac.getBean("boss3");
+//		System.out.println(boss);
 	}
 }

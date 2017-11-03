@@ -13,7 +13,7 @@
     http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<bean id="car" class="com.smart.bean.Car">
+	<bean id="car0" class="com.smart.bean.Car">
 		<property name="color" value="红色"></property>
 	</bean>
 	
@@ -65,10 +65,21 @@
 	
 	<!-- MagicBoss prototype类型的bean-->
 	<bean id="car" class="com.smart.injectfun.Car" scope="prototype">
-		<property name="brand">红旗</property>
+		<property name="brand" value="红旗"></property>
 	</bean>
 	<!-- 实施方法注入 -->
 	<bean id="magicBoss" class="com.smart.injectfun.MagicBoss">
 		<lookup-method name="getCar" bean="car"/>
+	</bean>
+	<!-- 属性编辑器 -->
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="com.smart.bean.Car" value="com.smart.bean.editor.CarEditor"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="boss3" class="com.smart.bean.Boss">
+		<property name="car" value="红旗,red,200"></property>
 	</bean>
 </beans> 
