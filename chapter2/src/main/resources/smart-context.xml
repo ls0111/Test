@@ -17,9 +17,14 @@
 	<context:component-scan base-package="com.smart.dao" />
 	<context:component-scan base-package="com.smart.service" />
 
-	<!-- 加载配置属性文件 -->
+	<!-- 加载配置属性文件
 	<context:property-placeholder
 		ignore-unresolvable="false" location="classpath:jdbc.properties" />
+	 -->
+	<bean class="cn.lys.props.EncryptProps">
+		<property name="location" value="classpath:jdbc.properties"></property>
+		<property name="fileEncoding" value="UTF-8"></property>
+	</bean>
 
 	<!-- 2.定义一个DBCP实现的数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
