@@ -20,6 +20,7 @@ public class UserDao {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public int getMatchCount(String userName, String password) {
 		String sql = "select count(1) from t_user where user_name = ? and password = ?";
 		List list = jdbcTemplate.queryForList(sql, userName, password);

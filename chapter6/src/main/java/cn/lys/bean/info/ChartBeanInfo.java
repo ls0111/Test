@@ -1,4 +1,4 @@
-package cn.lys.beaninfo;
+package cn.lys.bean.info;
 
 import java.beans.PropertyDescriptor;
 import java.beans.SimpleBeanInfo;
