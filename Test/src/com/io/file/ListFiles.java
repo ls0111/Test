@@ -18,8 +18,9 @@ public class ListFiles {
 				if (file.isDirectory()) {
 					System.out.println(file.getCanonicalPath());
 					listFiles(file.getPath());
+				} else {
+					System.out.println(file.getName());
 				}
-				
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

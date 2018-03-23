@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 /**
  * 数据库连接工具类
- * @author zhaorq
+ * @author louys
  * @verion 1.0.0.1
  */
 public class DBUtils {
@@ -19,7 +19,7 @@ public class DBUtils {
 		sb.append("FROM hoyi_dict_type a, hoyi_dict_item b ");
 		sb.append("WHERE a.code = b.type ");
 		sb.append("ORDER BY a.seqno, b.seqno ");
-		ResultSet rs = DBUtils.query(sb.toString());
+		ResultSet rs = DBUtils.query(sb.toString(), "jcrcb-1");
 		try {
 			while (rs.next()) {
 				System.out.println(rs.getString(1));
@@ -29,28 +29,31 @@ public class DBUtils {
 		}
 	}
 	
-	
-	
-	/**
+    /**
+     * 获得数据库链接
+     * @return
+     */
+    public static Connection getConnection(String dbName) {
+    	return getConnection(dbName, "root", "1234");
+    }
+    
+    /**
 	 * 获得数据库链接
 	 * @return
 	 */
-    public static Connection getConnection() {
+    public static Connection getConnection(String dbName, String userName, String password) {
     	Connection connection = null;
-    	String url = "jdbc:mysql://localhost:3306/jcrcb-1";
-    	String username = "root";
-    	String password = "1234";
+    	String url = "jdbc:mysql://localhost:3306/" + dbName;
         try {
-        	connection = DriverManager.getConnection(url, username, password);
+        	connection = DriverManager.getConnection(url, userName, password);
         } catch (Exception e) {
         	e.printStackTrace();
         }
         return connection;
     }
     
-    public static ResultSet query(String sql) {
-    	Connection connection = getConnection();
-    	
+    public static ResultSet query(String sql, String dbName) {
+    	Connection connection = getConnection(dbName);
     	try {
 			Statement stmt = connection.createStatement();
 			return stmt.executeQuery(sql);
@@ -60,11 +63,11 @@ public class DBUtils {
     	return null;
     }
     
-    public static ResultSet query(String sql, Object... params) {
+    public static ResultSet query(String sql, String dbName, Object... params) {
     	Connection conn = null;
     	PreparedStatement stmt = null;
     	try {
-    		conn = getConnection();
+    		conn = getConnection(dbName);
     		stmt = conn.prepareStatement(sql);
     		if (params.length > 0) {
     			for (int i=0; i<params.length; i++) {

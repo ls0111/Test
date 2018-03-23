@@ -87,6 +87,6 @@ public class Generator {
 		}
 	}
 	public static ResultSet getData(String tableName){
-		return DBUtils.query("SHOW FULL COLUMNS FROM " + tableName);
+		return DBUtils.query("SHOW FULL COLUMNS FROM " + tableName, "jcrcb-1");
 	}
 }

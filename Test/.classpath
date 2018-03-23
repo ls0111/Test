@@ -13,6 +13,8 @@
 	<classpathentry kind="lib" path="lib/jackson-core-2.8.8.jar"/>
 	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-jdbc-4.0.0.M1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/Maven_Repository/maven_jar/com/fasterxml/jackson/core/jackson-databind/2.8.1/jackson-databind-2.8.1.jar">
 		<attributes>
